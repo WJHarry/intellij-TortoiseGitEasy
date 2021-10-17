@@ -1,0 +1,101 @@
+<idea-plugin>
+    <id>WJHarry.TortoiseGitEasy</id>
+    <name>TortoiseGitEasy</name>
+    <vendor email="wjhmrc@gmail.com" url="">WJHarry</vendor>
+
+    <description><![CDATA[
+    A easy way to use tortoise git in Jetbrains IDEs(Windows).
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="settings.AppSettingsState"/>
+        <applicationConfigurable parentId="tools" instance="settings.AppSettingsConfigurable"
+                                 id="org.intellij.sdk.settings.AppSettingsConfigurable"
+                                 displayName="TortoiseGitEasy"/>
+    </extensions>
+
+    <actions>
+        <group id="TGit.MainMenu" text="TGit">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </group>
+        <group id="TGit.EditorMenu" text="TGit" popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </group>
+
+        <!-- Git root operations-->
+        <group id="TGit.MainMenu.Root" text="Root" popup="true">
+            <add-to-group group-id="TGit.MainMenu" anchor="last"/>
+        </group>
+        <group id="TGit.EditorMenu.Root" text="Root" popup="true">
+            <add-to-group group-id="TGit.EditorMenu" anchor="last"/>
+        </group>
+
+        <action id="TGit.commit.Root" class="actions.root.CommitRootAction" text="Commit" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="first"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="first"/>
+        </action>
+        <action id="TGit.log.Root" class="actions.root.LogRootAction" text="Log" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+        <action id="TGit.pull.Root" class="actions.root.PullRootAction" text="Pull" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+        <action id="TGit.fetch.Root" class="actions.root.FetchRootAction" text="Fetch" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+        <action id="TGit.push.Root" class="actions.root.PushRootAction" text="Push" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+        <action id="TGit.merge.Root" class="actions.root.MergeRootAction" text="Merge" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+        <action id="TGit.rebase.Root" class="actions.root.RebaseRootAction" text="Rebase" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+        <action id="TGit.rebase.Diff" class="actions.root.DiffRootAction" text="Diff" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+
+        <!-- Current file operations-->
+        <group id="TGit.MainMenu.CurrentFile" text="Current" popup="true">
+            <add-to-group group-id="TGit.MainMenu" anchor="last"/>
+        </group>
+        <group id="TGit.EditorMenu.CurrentFile" text="Current" popup="true">
+            <add-to-group group-id="TGit.EditorMenu" anchor="last"/>
+        </group>
+
+        <action id="TGit.commit.CurrentFile" class="actions.current.CommitCurrentAction" text="Commit" popup="true">
+            <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="first"/>
+            <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="first"/>
+        </action>
+        <action id="TGit.log.Current" class="actions.current.LogCurrentAction" text="Log" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
+        </action>
+        <action id="TGit.log.Diff" class="actions.current.DiffCurrentAction" text="Diff" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
+        </action>
+        <action id="TGit.log.Blame" class="actions.current.BlameCurrentAction" text="Blame" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
+        </action>
+
+
+        <action id="TGit.log.Setting" class="actions.SettingAction" text="Setting" popup="true">
+            <add-to-group group-id="TGit.EditorMenu" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

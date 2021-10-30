@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'WJHarry'
-version '1.0.0.0'
+version '1.0.0.1'
 
 repositories {
     mavenCentral()
@@ -21,7 +21,16 @@ intellij {
 }
 patchPluginXml {
     changeNotes = """
-      Commit the first stable version 1.0.0.0
+      <p>1.0.0.1</p>
+        <ul>
+            <li>Added feature to open the project root directory in Explorer.</li>
+            <li>Improve some wording in the description.</li>
+        </ul>
+
+      <p>1.0.0.0</p>
+        <ul>
+            <li>Commit the first stable version 1.0.0.0</li>
+        </ul>
       """
 }
 test {

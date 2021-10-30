@@ -1,13 +1,13 @@
 <idea-plugin>
     <id>WJHarry.TortoiseGitEasy</id>
     <name>TortoiseGitEasy</name>
-    <version>1.0.0.0</version>
-    <vendor email="jingheng.wang@outlook.com" url="https://github.com/WJHarry/intellij-TortoiseGitEasy">WJHarry</vendor>
+    <version>1.0.0.1</version>
+    <vendor email="jingheng.wang@outlook.com" url="https://github.com/WJHarry">WJHarry</vendor>
 
     <description><![CDATA[
     <strong>A easy way to use tortoise git in Jetbrains IDEs/Android Studio/HUAWEI DevEco Studio (Windows).</strong>
     <br/><br/>
-    Tortoise Git is a very commonly used git GUI tool under Windows. In team collaboration, if everyone uses Tortoise Git for work, the git tool that comes with Jetbrains may not be compatible. However, it is very troublesome to switch to the resource manager and perform operations such as log viewing or commit. This plugin integrates Tortoise Git operations into your IDE, simplifying the operation process.
+    Tortoise Git is a very commonly used git GUI tool under Windows. In team collaboration, if everyone uses Tortoise Git, the git tool that comes with Jetbrains may not be compatible. However, it is very troublesome to switch to the File Explorer and perform operations such as log viewing or commit. This plugin integrates Tortoise Git operations into your IDE, simplifying the operation process.
     <br/><br/>
     This plugin is inspired by the <a href="https://github.com/sboulema/TGit">TGit plugin</a> under Visual Studio.
     <hr>
@@ -21,7 +21,16 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      Commit the first stable version 1.0.0.0
+    <p>1.0.0.1</p>
+        <ul>
+            <li>Added feature to open the project root directory in Explorer.</li>
+            <li>Improve some wording in the description.</li>
+        </ul>
+
+    <p>1.0.0.0</p>
+        <ul>
+            <li>Commit the first stable version 1.0.0.0</li>
+        </ul>
     ]]>
     </change-notes>
 
@@ -80,7 +89,7 @@
             <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
         </action>
-        <action id="TGit.rebase.Diff" class="actions.root.DiffRootAction" text="Diff" popup="true">
+        <action id="TGit.diff.Root" class="actions.root.DiffRootAction" text="Diff" popup="true">
             <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
         </action>
@@ -101,17 +110,21 @@
             <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
         </action>
-        <action id="TGit.log.Diff" class="actions.current.DiffCurrentAction" text="Diff" popup="true">
+        <action id="TGit.diff.Current" class="actions.current.DiffCurrentAction" text="Diff" popup="true">
             <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
         </action>
-        <action id="TGit.log.Blame" class="actions.current.BlameCurrentAction" text="Blame" popup="true">
+        <action id="TGit.blame.Current" class="actions.current.BlameCurrentAction" text="Blame" popup="true">
             <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
         </action>
 
 
-        <action id="TGit.log.Setting" class="actions.SettingAction" text="Setting" popup="true">
+        <action id="TGit.Setting" class="actions.SettingAction" text="Setting" popup="true">
+            <add-to-group group-id="TGit.EditorMenu" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu" anchor="last"/>
+        </action>
+        <action id="TGit.Explorer" class="actions.ExplorerAction" text="Explorer" popup="true">
             <add-to-group group-id="TGit.EditorMenu" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu" anchor="last"/>
         </action>

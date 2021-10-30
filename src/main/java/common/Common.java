@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.nio.file.Paths;
 
 public class Common {
 	@Nullable
@@ -41,7 +42,8 @@ public class Common {
 			Messages.showInfoMessage("Something wrong:" + ex.getMessage(), "Error");
 			return null;
 		}
-		return path;
+		// Ensure that it conforms to the Windows path style.
+		return Paths.get(path).toString();
 	}
 
 	@Nullable

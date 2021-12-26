@@ -110,6 +110,27 @@
             <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
         </action>
 
+        <!-- Git root stash operations-->
+        <group id="TGit.MainMenu.Root.Stash" text="Stash" popup="true">
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </group>
+        <group id="TGit.EditorMenu.Root.Stash" text="Stash" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+        </group>
+
+        <action id="TGit.stashsave.Root" class="actions.root.stash.StashSaveRootAction" text="Stash changes" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root.Stash" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root.Stash" anchor="last"/>
+        </action>
+        <action id="TGit.stashpop.Root" class="actions.root.stash.StashPopRootAction" text="Stash pop" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root.Stash" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root.Stash" anchor="last"/>
+        </action>
+        <action id="TGit.stashlist.Root" class="actions.root.stash.StashListRootAction" text="Stash list" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root.Stash" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root.Stash" anchor="last"/>
+        </action>
+
         <!-- Current file operations-->
         <group id="TGit.MainMenu.CurrentFile" text="Current" popup="true">
             <add-to-group group-id="TGit.MainMenu" anchor="last"/>

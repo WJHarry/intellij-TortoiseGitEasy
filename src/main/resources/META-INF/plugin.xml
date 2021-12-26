@@ -135,7 +135,14 @@
             <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
         </action>
 
-
+        <action id="TGit.CleanUp" class="actions.CleanUpAction" text="Clean up" popup="true">
+            <add-to-group group-id="TGit.EditorMenu" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu" anchor="last"/>
+        </action>
+        <action id="TGit.Sync" class="actions.SyncAction" text="Sync" popup="true">
+            <add-to-group group-id="TGit.EditorMenu" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu" anchor="last"/>
+        </action>
         <action id="TGit.Setting" class="actions.SettingAction" text="Setting" popup="true">
             <add-to-group group-id="TGit.EditorMenu" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu" anchor="last"/>

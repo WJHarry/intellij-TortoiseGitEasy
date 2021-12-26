@@ -93,6 +93,10 @@
             <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
         </action>
+        <action id="TGit.switch.Root" class="actions.root.SwitchRootAction" text="Switch" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
 
         <!-- Current file operations-->
         <group id="TGit.MainMenu.CurrentFile" text="Current" popup="true">

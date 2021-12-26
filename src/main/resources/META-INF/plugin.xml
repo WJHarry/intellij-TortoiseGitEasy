@@ -65,7 +65,15 @@
             <add-to-group group-id="TGit.EditorMenu.Root" anchor="first"/>
             <add-to-group group-id="TGit.MainMenu.Root" anchor="first"/>
         </action>
+        <action id="TGit.revert.Root" class="actions.root.RevertRootAction" text="Revert" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="first"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="first"/>
+        </action>
         <action id="TGit.log.Root" class="actions.root.LogRootAction" text="Log" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+        <action id="TGit.reflog.Root" class="actions.root.RefLogRootAction" text="RefLog" popup="true">
             <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
         </action>
@@ -86,6 +94,10 @@
             <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
         </action>
         <action id="TGit.rebase.Root" class="actions.root.RebaseRootAction" text="Rebase" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+        <action id="TGit.resolve.Root" class="actions.root.ResolveRootAction" text="Resolve" popup="true">
             <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
         </action>

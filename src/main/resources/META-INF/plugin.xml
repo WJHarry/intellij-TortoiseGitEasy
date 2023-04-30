@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>WJHarry.TortoiseGitEasy</id>
     <name>TortoiseGitEasy</name>
-    <version>1.0.0.1</version>
+    <version>1.0.0.3</version>
     <vendor email="jingheng.wang@outlook.com" url="https://github.com/WJHarry">WJHarry</vendor>
 
     <description><![CDATA[
@@ -21,13 +21,21 @@
     ]]></description>
 
     <change-notes><![CDATA[
-    <p>1.0.0.1</p>
+      <p>1.0.0.3</p>
+        <ul>
+            <li>Update build version to fit version 231</li>
+        </ul>
+      <p>1.0.0.2</p>
+        <ul>
+            <li>Specify the correct since-build until-build</li>
+        </ul>
+      <p>1.0.0.1</p>
         <ul>
             <li>Added feature to open the project root directory in Explorer.</li>
             <li>Improve some wording in the description.</li>
         </ul>
 
-    <p>1.0.0.0</p>
+      <p>1.0.0.0</p>
         <ul>
             <li>Commit the first stable version 1.0.0.0</li>
         </ul>
@@ -44,6 +52,8 @@
                                  id="org.intellij.sdk.settings.AppSettingsConfigurable"
                                  displayName="TortoiseGitEasy"/>
     </extensions>
+
+    <idea-version since-build="201" until-build="231.*"/>
 
     <actions>
         <group id="TGit.MainMenu" text="TGit">

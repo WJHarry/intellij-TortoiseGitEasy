@@ -1,3 +1,5 @@
 .gradle
 build
 .idea
+.metadata
+jdt.ls-java-project

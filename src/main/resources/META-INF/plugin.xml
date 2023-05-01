@@ -103,6 +103,27 @@
             <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
         </action>
+        <action id="TGit.resolve.Root" class="actions.root.ResolveRootAction" text="Resolve" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </action>
+
+        <group id="TGit.MainMenu.Root.Stash" text="Stash" popup="true">
+            <add-to-group group-id="TGit.MainMenu.Root" anchor="last"/>
+        </group>
+        <group id="TGit.EditorMenu.Root.Stash" text="Stash" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root" anchor="last"/>
+        </group>
+
+        <action id="TGit.stash.save.Root" class="actions.root.stash.StashSaveRootAction" text="Save" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root.Stash" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root.Stash" anchor="last"/>
+        </action>
+
+        <action id="TGit.stash.pop.Root" class="actions.root.stash.StashPopRootAction" text="Pop" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.Root.Stash" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.Root.Stash" anchor="last"/>
+        </action>
 
         <!-- Current file operations-->
         <group id="TGit.MainMenu.CurrentFile" text="Current" popup="true">
@@ -121,6 +142,10 @@
             <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
         </action>
         <action id="TGit.diff.Current" class="actions.current.DiffCurrentAction" text="Diff" popup="true">
+            <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="last"/>
+            <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
+        </action>
+        <action id="TGit.resolve.Current" class="actions.current.ResolveCurrentAction" text="Resolve" popup="true">
             <add-to-group group-id="TGit.EditorMenu.CurrentFile" anchor="last"/>
             <add-to-group group-id="TGit.MainMenu.CurrentFile" anchor="last"/>
         </action>

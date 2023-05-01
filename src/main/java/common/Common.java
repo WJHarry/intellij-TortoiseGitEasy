@@ -25,9 +25,23 @@ public class Common {
 		String path;
 		try {
 			Project project = e.getProject();
-			Editor editor = e.getData(CommonDataKeys.EDITOR);
-			Document document = FileEditorManager.getInstance(project).getSelectedTextEditor().getDocument();
+			if (project == null) {
+				Messages.showInfoMessage("Please just open a project.", "Error");
+				return null;
+			}
+
+			Editor selectedTextEditor = FileEditorManager.getInstance(project).getSelectedTextEditor();
+			if (selectedTextEditor == null) {
+				Messages.showInfoMessage("Please just open an editor.", "Error");
+				return null;
+			}
+
+			Document document = selectedTextEditor.getDocument();
 			PsiFile file = PsiDocumentManager.getInstance(project).getPsiFile(document);
+			if (file == null) {
+				Messages.showInfoMessage("Please just open a file.", "Error");
+				return null;
+			}
 			Process process = Runtime.getRuntime().exec("git rev-parse --show-toplevel", null,
 					new File(file.getVirtualFile().getParent().getPath()));
 			BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -50,8 +64,21 @@ public class Common {
 	public static String getCurrentFilePath(@NotNull AnActionEvent e) {
 		try {
 			Project project = e.getProject();
-			Document currentDoc = FileEditorManager.getInstance(project).getSelectedTextEditor().getDocument();
+			if (project == null) {
+				Messages.showInfoMessage("Please just open a project.", "Error");
+				return null;
+			}
+			Editor selectedTextEditor = FileEditorManager.getInstance(project).getSelectedTextEditor();
+			if (selectedTextEditor == null) {
+				Messages.showInfoMessage("Please just open an editor.", "Error");
+				return null;
+			}
+			Document currentDoc = selectedTextEditor.getDocument();
 			VirtualFile currentFile = FileDocumentManager.getInstance().getFile(currentDoc);
+			if (currentFile == null) {
+				Messages.showInfoMessage("Please just open a file.", "Error");
+				return null;
+			}
 			return currentFile.getPath();
 		} catch (Exception ex) {
 			ex.printStackTrace();

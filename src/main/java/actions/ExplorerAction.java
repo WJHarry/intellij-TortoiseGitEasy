@@ -14,7 +14,11 @@ public class ExplorerAction extends AnAction {
 	public void actionPerformed(@NotNull AnActionEvent e) {
 		Runtime runtime = Runtime.getRuntime();
 		try {
-			runtime.exec("explorer.exe " + Common.getGitRootPath(e));
+			String rootPath = Common.getGitRootPath(e);
+			if (rootPath == null) {
+				return;
+			}
+			runtime.exec("explorer.exe " + rootPath);
 		} catch (IOException ex) {
 			ex.printStackTrace();
 			Messages.showInfoMessage("Something wrong:" + ex.getMessage(), "Error");

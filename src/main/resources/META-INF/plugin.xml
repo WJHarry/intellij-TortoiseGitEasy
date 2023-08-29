@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>WJHarry.TortoiseGitEasy</id>
     <name>TortoiseGitEasy</name>
-    <version>1.0.0.3</version>
+    <version>1.0.0.5</version>
     <vendor email="jingheng.wang@outlook.com" url="https://github.com/WJHarry">WJHarry</vendor>
 
     <description><![CDATA[
@@ -21,6 +21,14 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      <p>1.0.0.5</p>
+        <ul>
+            <li>Update build version to fit version 232</li>
+        </ul>
+      <p>1.0.0.4</p>
+        <ul>
+            <li>Add some useful features: 1. Stash save and pop 2. Resolve conflicted files 3. Repair some bugs (NPE)</li>
+        </ul>
       <p>1.0.0.3</p>
         <ul>
             <li>Update build version to fit version 231</li>
@@ -53,7 +61,7 @@
                                  displayName="TortoiseGitEasy"/>
     </extensions>
 
-    <idea-version since-build="201" until-build="231.*"/>
+    <idea-version since-build="201" until-build="232.*"/>
 
     <actions>
         <group id="TGit.MainMenu" text="TGit">

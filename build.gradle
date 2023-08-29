@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'WJHarry'
-version '1.0.0.3'
+version '1.0.0.5'
 
 repositories {
     mavenCentral()
@@ -15,10 +15,18 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version = '231.8770.65'
+    version = '232.8660.185'
 }
 patchPluginXml {
     changeNotes = """
+      <p>1.0.0.5</p>
+        <ul>
+            <li>Update build version to fit version 232</li>
+        </ul>
+      <p>1.0.0.4</p>
+        <ul>
+            <li>Add some useful features: 1. Stash save and pop 2. Resolve conflicted files 3. Repair some bugs (NPE)</li>
+        </ul>
       <p>1.0.0.3</p>
         <ul>
             <li>Update build version to fit version 231</li>
@@ -39,7 +47,7 @@ patchPluginXml {
         </ul>
       """
     sinceBuild = '201'
-    untilBuild = '231.*'
+    untilBuild = '232.*'
 }
 
 publishPlugin {
